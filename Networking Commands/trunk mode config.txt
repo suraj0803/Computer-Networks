@@ -1,0 +1,16 @@
+en
+conf t
+interface g0/1
+switchport mode ?
+switchport mode trunk
+exit
+
+//For another switch
+conf t
+interface g0/1
+switchport mode trunk
+exit
+
+//priviliged mode
+show ip interface brief
+

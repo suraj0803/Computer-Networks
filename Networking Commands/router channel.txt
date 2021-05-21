@@ -1,0 +1,16 @@
+no
+en
+conf t
+interface g0/0/0
+no shut exit
+
+interface g0/0/0.10
+encapsulation dot1q 10
+ip address 10.0.0.1 255.0.0.0
+exit
+
+interface g0/0/0.20
+encapsulation dot1q 20
+ip address 20.0.0.1 255.0.0.0
+exit
+exit

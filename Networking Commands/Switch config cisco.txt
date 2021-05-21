@@ -1,0 +1,149 @@
+Switch> enable
+
+Switch# conf t
+
+Switch(config)# host sw-Floor-1
+
+sw-Floor-1(config)# interface vlan 1
+
+sw-Floor-1(config-if)# ip address 192.168.1.1 255.255.255.0
+
+sw-Floor-1(config-if)# no shut
+
+sw-Floor-1(config-if)# end
+
+conf t
+line console 0
+password cisco
+login
+end
+
+//Ultra Secure
+conf t
+enable secret class
+exit
+
+//
+conf t
+line vty 0 15
+password cisco
+login 
+end
+
+//Service password config
+
+conf t
+service password-encryption
+exit
+
+//
+conf t
+banner motd #authorised user only#
+exit
+
+//
+show running-config
+
+//
+copy run start
+
+//
+
+
+
+////////////
+sw-Floor-1#show running-config
+
+ 
+
+sw-Floor-1#conf t
+
+Enter configuration commands, one per line. End with CNTL/Z.
+
+sw-Floor-1(config)#banner motd #Authorize Access only!#
+
+ 
+
+sw-Floor-1#copy run start
+////////
+sw-Floor-1#conf t
+
+Enter configuration commands, one per line. End with CNTL/Z.
+
+sw-Floor-1(config)#line vty 0 15
+
+sw-Floor-1(config-line)#password cisco
+
+sw-Floor-1(config-line)#login
+
+sw-Floor-1(config-line)#end
+
+ 
+
+sw-Floor-1#conf t
+
+Enter configuration commands, one per line. End with CNTL/Z.
+
+sw-Floor-1(config)#service password-encryption
+
+sw-Floor-1(config)#exit
+
+////////////
+Switch#conf t
+
+Switch(config)#hostname sw-Floor-1
+
+sw-Floor-1(config)#line console 0
+
+sw-Floor-1(config-line)#password cisco
+
+sw-Floor-1(config-line)#login
+
+sw-Floor-1(config-line)#end
+
+sw-Floor-1#conf t
+
+sw-Floor-1(config)#enable secret class
+
+sw-Floor-1(config)#exit
+
+////////////
+Switch> enable
+
+Switch# conf t
+
+Switch(config)# host sw-Floor-1
+
+sw-Floor-1(config)# interface vlan 1
+
+sw-Floor-1(config-if)# ip address 192.168.1.1 255.255.255.0
+
+sw-Floor-1(config-if)# no shut
+
+sw-Floor-1(config-if)# end
+
+
+////////
+sw-Floor-1#show running-config
+
+ 
+
+sw-Floor-1#conf t
+
+Enter configuration commands, one per line. End with CNTL/Z.
+
+sw-Floor-1(config)#banner motd #Authorize Access only!#
+
+ 
+
+sw-Floor-1#copy run start
+
+
+////////
+hostname switch1
+interface vlan 1
+ip address 192.1681.1.1 255.255.255.0
+no shut
+end
+
+/////
